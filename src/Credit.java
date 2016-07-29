@@ -1,13 +1,14 @@
 
 public class Credit 
 {
-	double creditAmt;
-	double balAmt;
-	double sumBal;
+	private double creditAmt;
+	private double balAmt;
+	private double sumBal;
 	
-	public Credit(double creditAmt)
+	public Credit(double creditAmt, double currBal)
 	{
 		this.creditAmt = creditAmt;
+		balAmt = currBal;
 	}
 	
 	public void setCreditAmt(double creditAmt)
