@@ -12,42 +12,11 @@ public class MainDriver {
 		
 		Credit creditApp = new Credit(creditAmt, balAmt);
 		Debit debitApp = new Debit(debitAmt, balAmt);
-
-		System.out.println("1) Deposit");
-		System.out.println("2) Withdrawal");
-		System.out.println("Which would you like to do? ");
+		MainGui createGui = new MainGui();
+		LoginPage loginGui = new LoginPage();
 		
-		Scanner input = new Scanner(System.in);
-		Scanner creditInput = new Scanner(System.in);
-		Scanner debitInput = new Scanner(System.in);
-		Scanner balInput = new Scanner(System.in);
-		itemSelect = input.nextInt();
+		loginGui.createFrame();
 		
-		if(itemSelect == 1)
-		{
-			System.out.println("What is your balance: ");
-			balAmt = balInput.nextDouble();
-			System.out.println("Please enter Deposit Amount: ");
-			creditAmt = creditInput.nextDouble();
-			
-			creditApp.setBalanceAmt(balAmt);
-			creditApp.setCreditAmt(creditAmt);
-			
-			System.out.printf("%s%.2f", "Your new balance is: $", creditApp.sumItems());
-		}
-		
-		if(itemSelect == 2)
-		{
-			System.out.println("What is your balance: ");
-			balAmt = balInput.nextDouble();
-			System.out.println("What amount would you like to withdraw: ");
-			debitAmt = creditInput.nextDouble();	
-			
-			debitApp.setCurrentBal(balAmt);
-			debitApp.setDebitVal(debitAmt);
-			
-			System.out.printf("%s%.2f", "Your new balance is: $", debitApp.calcBal());
-		}
 	}
 
 }
